@@ -1,57 +1,12 @@
+mod quack_behavior;
+mod fly_behavior;
+mod swim_behavior;
 
-trait QuackBehavior {
-    fn quack(&self);
-}
+use quack_behavior::*;
+use fly_behavior::*;
+use swim_behavior::*;
 
-struct Quack {}
-impl QuackBehavior for Quack {
-    fn quack(&self) {
-        println!("Quack!");
-    }
-}
 
-struct NoQuack {}
-impl QuackBehavior for NoQuack {
-    fn quack(&self) {
-        println!("*siiileeence*");
-    }
-}
-
-trait FlyBehavior {
-    fn fly(&self);
-}
-
-struct Fly {}
-impl FlyBehavior for Fly {
-    fn fly(&self) {
-        println!("Fly!");
-    }
-}
-
-struct NoFly {}
-impl FlyBehavior for NoFly {
-    fn fly(&self) {
-        println!("I can't fly (");
-    }
-}
-
-trait SwimBehavior {
-    fn swim(&self);
-}
-
-struct Swim {}
-impl SwimBehavior for Swim {
-    fn swim(&self) {
-        println!("Swim!");
-    }
-}
-
-struct NoSwim {}
-impl SwimBehavior for NoSwim {
-    fn swim(&self) {
-        println!("I can't swim (");
-    }
-}
 
 struct Duck {
     quack_behavior: Box<dyn QuackBehavior>,
@@ -134,11 +89,11 @@ impl DuckQuailCall {
 
 fn main() {
     let duck = Duck::new_wood_duck();
-    let quail_call = DuckQuailCall::new_mallard_duck_quail_call();
 
     duck.quack();
     duck.fly();
     duck.swim();
 
+    let quail_call = DuckQuailCall::new_mallard_duck_quail_call();
     quail_call.quack();
 }
