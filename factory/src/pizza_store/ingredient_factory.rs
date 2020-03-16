@@ -8,5 +8,4 @@ pub trait IngredientFactory {
     fn create_cheese(&self) -> Cheese;
     fn create_pepperoni(&self) -> Pepperoni;
     fn create_clam(&self) -> Clam;
-    fn create_specific_additive(&self) -> SpecificAdditive;
 }

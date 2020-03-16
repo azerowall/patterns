@@ -37,7 +37,7 @@ pub enum Veggie {
 }
 
 #[derive(Debug)]
-pub enum SpecificAdditive {
+pub enum SpecificIngredient {
     SaltedWatermelon,
     Honey,
     Pineapple,
